@@ -1001,3 +1001,16 @@ plan.style.transition=".8s";
 observer.observe(plan);
 
 });
+// ==========================================
+// IR A EDICIÓN FÍSICA DESDE MODAL PASSWORD
+// ==========================================
+
+function irEdicionFisica(){
+
+    // cerrar modal del código
+    cerrarModal("modalPassword");
+
+    // abrir sección edición física
+    mostrarSeccion("fisica");
+
+}
