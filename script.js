@@ -351,7 +351,7 @@ const contenidoArticulos = {
 1:{
 
 
-imagen:"assets/img/1.jpg",
+imagen:"assets/img/2.jpg",
 
 
 titulo:"El PULULAHUA SIDERAL FEST V",
@@ -400,7 +400,7 @@ Por eso, documentar eventos como Pululahua Sideral Fest es conservar una parte d
 
 imagenes:[
 
-"assets/img/1.jpg",
+"assets/img/4.jpg",
 
 "assets/img/2.jpg",
 
