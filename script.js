@@ -351,7 +351,7 @@ const contenidoArticulos = {
 1:{
 
 
-imagen:"assets/img/2.jpg",
+imagen:"assets/img/1.jpg",
 
 
 titulo:"El PULULAHUA SIDERAL FEST V",
