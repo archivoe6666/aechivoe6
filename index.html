@@ -18,6 +18,8 @@
 
 <!-- ================= HEADER ================= -->
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 
@@ -29,11 +31,21 @@
 
 
 
-<nav>
+<!-- BOTÓN HAMBURGUESA -->
+
+<button class="menu-toggle" onclick="abrirMenu()">
+
+☰
+
+</button>
+
+
+
+<nav id="menu">
+
 
 <button onclick="mostrarSeccion('informacion')">
 Información
-
 </button>
 
 
@@ -66,12 +78,6 @@ Contacto
 
 
 </header>
-
-
-
-
-
-<main>
 
 
 
@@ -518,6 +524,7 @@ BENEFICIOS
 
 <!-- ================= ARTÍCULOS ================= -->
 
+<!-- ================= ARTÍCULOS ================= -->
 
 <section id="articulos" class="seccion">
 
@@ -530,6 +537,12 @@ Artículos destacados
 </h1>
 
 
+<p class="intro-articulos">
+
+Historias, registros y memorias de la escena cultural independiente de Quito.
+
+</p>
+
 
 
 
@@ -537,6 +550,7 @@ Artículos destacados
 
 
 
+<!-- ================= ARTICULO 1 ================= -->
 
 
 <div class="articulo-card"
@@ -544,22 +558,41 @@ onclick="abrirArticulo(1)">
 
 
 
-<img src="assets/img/articulo1.jpg">
+<img src="assets/img/1.jpg"
+>
 
+
+
+<div class="articulo-info">
 
 
 <h2>
-Memoria sonora de Quito
+
+El PULULAHUA SIDERAL FEST V
+
 </h2>
+
+
 
 
 
 <p>
 
-La escena independiente
-y sus nuevas voces.
+Un festival independiente donde música,
+arte visual y naturaleza construyen memoria
+desde el territorio.
 
 </p>
+
+
+<button>
+
+Leer artículo
+
+</button>
+
+
+</div>
 
 
 </div>
@@ -567,6 +600,9 @@ y sus nuevas voces.
 
 
 
+
+
+<!-- ================= ARTICULO 2 ================= -->
 
 
 <div class="articulo-card"
@@ -574,22 +610,40 @@ onclick="abrirArticulo(2)">
 
 
 
-<img src="assets/img/articulo2.jpg">
+<img src="assets/img/m5.JPG"
+>
 
+
+
+<div class="articulo-info">
 
 
 <h2>
-Experimentación musical
+
+LA MADRE TIRANA + ESTAMOS PERDIDOS
+
 </h2>
+
 
 
 
 <p>
 
-Sonidos, tecnología
-y nuevas narrativas.
+La escena alternativa de Quito continúa creando
+espacios donde la música funciona como expresión,
+crítica y encuentro.
 
 </p>
+
+
+<button>
+
+Leer artículo
+
+</button>
+
+
+</div>
 
 
 </div>
@@ -598,6 +652,8 @@ y nuevas narrativas.
 
 
 
+
+<!-- ================= ARTICULO 3 ================= -->
 
 
 <div class="articulo-card"
@@ -605,27 +661,42 @@ onclick="abrirArticulo(3)">
 
 
 
-<img src="assets/img/articulo3.jpg">
+<img src="assets/img/r1.JPG"
+>
 
+
+
+<div class="articulo-info">
 
 
 <h2>
-Arte visual contemporáneo
+
+EL PRIMER REBELDE DE AMÉRICA X NÁUSEAS
+
 </h2>
+
 
 
 
 <p>
 
-La imagen como archivo
-de una generación.
+Un encuentro donde la música se transforma
+en experimentación, energía y libertad artística.
 
 </p>
+
+
+<button>
+
+Leer artículo
+
+</button>
 
 
 </div>
 
 
+</div>
 
 
 
@@ -636,7 +707,6 @@ de una generación.
 
 
 </section>
-
 
 
 
@@ -1433,50 +1503,38 @@ Descargar PDF
 <!-- ================= MODAL ARTICULO ================= -->
 
 
-<div id="modalArticulo"
-class="modal">
+<!-- ================= MODAL ARTICULO COMPLETO ================= -->
+
+<div id="modalArticulo" class="modal articulo-full">
 
 
-<div class="modal-contenido articulo-completo">
+<div class="modal-articulo-contenido">
 
 
-
-<span onclick="cerrarModal('modalArticulo')">
-
+<span class="cerrar-articulo"
+onclick="cerrarModal('modalArticulo')">
 ×
-
 </span>
 
 
 
-
-<img id="imagenArticulo">
-
-
-
-<h1 id="tituloArticulo">
-
-</h1>
+<img id="imagenArticulo"
+class="imagen-portada-articulo">
 
 
 
-<h2 id="subtituloArticulo">
-
-</h2>
+<h1 id="tituloArticulo"></h1>
 
 
-
-
-<p id="textoArticulo">
-
-</p>
+<div id="textoArticulo"
+class="texto-articulo">
+</div>
 
 
 
-
-<img id="imagenInterior">
-
-
+<div id="galeriaArticulo"
+class="galeria-interior-articulo">
+</div>
 
 
 
@@ -1484,8 +1542,6 @@ class="modal">
 
 
 </div>
-
-
 
 
 
@@ -1502,19 +1558,19 @@ class="modal">
 
 <a href="https://www.instagram.com/archivoe6/" target="_blank">
 
-<img src="assets/icons/instagram.png" alt="Instagram">
+<img src="assets/img/in.png" alt="Instagram">
 
 </a>
 
 <a href="mailto:archivoeseis@gmail.com">
 
-<img src="assets/icons/email.png" alt="Correo">
+<img src="assets/img/co.png" alt="Correo">
 
 </a>
 
 <a href="https://wa.me/593963134928" target="_blank">
 
-<img src="assets/icons/whatsapp.png" alt="WhatsApp">
+<img src="assets/img/wa.png" alt="WhatsApp">
 
 </a>
 

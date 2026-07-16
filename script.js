@@ -47,7 +47,13 @@ behavior:"smooth"
 
 
 }
+const menu=document.getElementById("menu");
 
+if(menu){
+
+menu.classList.remove("activo");
+
+}
 
 
 
@@ -307,42 +313,25 @@ alert(
 // DESCARGA PDF
 // ==========================================
 
+// ==========================================
+// DESCARGAR PDF REVISTA
+// ==========================================
 
 function descargarPDF(){
 
+    const archivo = "pdf/ArchivoESEISN1.pdf";
 
+    const enlace = document.createElement("a");
 
-const archivo = 
+    enlace.href = archivo;
 
-"pdf/Archivo-E-SEIS-Edicion-0.pdf";
+    enlace.download = "ArchivoESEISN1.pdf";
 
+    document.body.appendChild(enlace);
 
+    enlace.click();
 
-const enlace = document.createElement("a");
-
-
-
-enlace.href = archivo;
-
-
-
-enlace.download = 
-
-"Archivo-E-SEIS-Edicion-0.pdf";
-
-
-
-document.body.appendChild(enlace);
-
-
-
-enlace.click();
-
-
-
-document.body.removeChild(enlace);
-
-
+    document.body.removeChild(enlace);
 
 }
 
@@ -353,202 +342,244 @@ document.body.removeChild(enlace);
 
 
 
-
 // ==========================================
 // ARTÍCULOS COMPLETOS
 // ==========================================
-// ==========================================
-// ARTÍCULOS COMPLETOS
-// ==========================================
-
 const contenidoArticulos = {
+
 
 1:{
 
-    imagen:"assets/img/articulo1.jpg",
 
-    titulo:"Memoria sonora de Quito",
+imagen:"assets/img/1.jpg",
 
-    subtitulo:"La escena independiente como archivo vivo de una ciudad.",
 
-    texto:`
-    <p>
-    Quito posee una escena musical independiente
-    que constantemente crea nuevos lenguajes,
-    espacios y formas de expresión.
-    </p>
+titulo:"El PULULAHUA SIDERAL FEST V",
 
-    <p>
-    Desde pequeños escenarios hasta encuentros
-    autogestionados, artistas construyen una memoria
-    cultural que muchas veces permanece fuera
-    de los registros tradicionales.
-    </p>
 
-    <p>
-    Archivo E-SEIS busca documentar estos procesos,
-    conservar sus historias y mostrar las conexiones
-    entre música, identidad y territorio.
-    </p>
-    `,
+subtitulo:"Donde la música vuelve a encontrarse con el volcán",
 
-    imagenesInterior:[
-        "assets/img/1.jpg",
-        "assets/img/2.jpg",
-        "assets/img/3.jpg",
-        "assets/img/5.jpg"
-    ]
+
+texto:`
+
+<h2>Una experiencia fuera del tiempo</h2>
+
+<p>
+En medio del paisaje volcánico que rodea al Pululahua, la música encontró nuevamente un espacio para reunirse, experimentar y resistir. El Pululahua Sideral Fest V se consolidó como una celebración independiente que reúne sonidos alternativos, arte visual y una comunidad que busca vivir la cultura fuera de los circuitos tradicionales.
+</p>
+
+
+<p>
+Más que un festival, Pululahua Sideral representa un punto de encuentro para artistas y públicos que entienden la música como una experiencia colectiva. Entre montañas, naturaleza y escenarios improvisados, diferentes propuestas musicales construyen una atmósfera donde conviven géneros, generaciones y formas distintas de expresión.
+</p>
+
+
+<h2>Un escenario construido por la naturaleza</h2>
+
+
+<p>
+El festival nace desde una necesidad: crear espacios propios para la escena independiente ecuatoriana. En un contexto donde muchos proyectos culturales dependen de la autogestión, estos encuentros funcionan como plataformas de visibilidad para músicos emergentes y propuestas experimentales que difícilmente encuentran lugar en escenarios comerciales.
+</p>
+
+
+
+
+<h2>Más que un festival, un recuerdo</h2>
+
+
+<p>
+Durante su quinta edición, el festival reunió bandas y artistas que representan la diversidad sonora actual de Quito y Ecuador. El público no solo asistió a conciertos, sino que participó de una experiencia completa donde la fotografía, el diseño, la convivencia y el paisaje forman parte del espectáculo.
+
+Cada edición deja un registro de una escena que está en constante transformación. Sin embargo, gran parte de esta memoria queda dispersa entre publicaciones temporales en redes sociales, fotografías personales y archivos difíciles de encontrar con el paso del tiempo.
+
+Por eso, documentar eventos como Pululahua Sideral Fest es conservar una parte de la identidad cultural contemporánea de Quito. Cada imagen, cada presentación y cada encuentro representan fragmentos de una historia que continúa escribiéndose desde la independencia y la creatividad.
+</p>
+
+`,
+
+
+imagenes:[
+
+"assets/img/1.jpg",
+
+"assets/img/2.jpg",
+
+"assets/img/3.jpg"
+
+]
+
 
 },
+
+
 
 2:{
 
-    imagen:"assets/img/articulo2.jpg",
 
-    titulo:"Sonidos experimentales",
+imagen:"assets/img/m1.jpg",
 
-    subtitulo:"Nuevas formas de entender la creación musical.",
 
-    texto:`
-    <p>
-    La experimentación sonora permite romper
-    las estructuras tradicionales de composición.
-    </p>
+titulo:"LA MADRE TIRANA + ESTAMOS PERDIDOS",
 
-    <p>
-    Artistas contemporáneos mezclan electrónica,
-    grabaciones ambientales, instrumentos
-    tradicionales y tecnología digital.
-    </p>
 
-    <p>
-    Estos procesos generan nuevas maneras
-    de escuchar y comprender la música.
-    </p>
-    `,
+subtitulo:"Dos proyectos, una misma energía",
 
-    imagenesInterior:[
-        "assets/img/r1.jpg",
-        "assets/img/r2.jpg",
-        "assets/img/r3.jpg"
-    ]
+
+texto:`
+
+<h2>la nueva resistencia del rock quiteño</h2>
+
+
+<p>
+La escena alternativa de Quito continúa creando espacios donde la música funciona como una forma de expresión, crítica y encuentro. La presentación conjunta de La Madre Tirana y Estamos Perdidos representa una muestra de cómo las nuevas generaciones mantienen vivo el espíritu independiente de la ciudad.
+
+En un escenario marcado por la experimentación y la búsqueda de nuevos lenguajes, ambas bandas demostraron que el rock ecuatoriano sigue evolucionando. Lejos de repetir fórmulas conocidas, sus propuestas exploran sonidos intensos, letras personales y una identidad construida desde las experiencias urbanas.
+
+
+
+
+</p>
+
+
+<h2>Una escena que sigue creciendo</h2>
+
+
+<p>
+La Madre Tirana destaca por una propuesta cargada de fuerza y actitud. Su sonido combina elementos del rock alternativo con una presencia escénica que transforma el concierto en una experiencia emocional. La banda representa una generación que utiliza la música para cuestionar, expresar frustraciones y convertir experiencias individuales en mensajes colectivos.
+
+Por otro lado, Estamos Perdidos refleja una sensibilidad distinta, marcada por la introspección y la exploración sonora. Su propuesta conecta con una juventud que enfrenta incertidumbres, cambios constantes y una realidad donde encontrar espacios de expresión se vuelve fundamental.
+
+El encuentro entre ambos proyectos evidencia la importancia de los escenarios independientes como lugares de construcción cultural. Pequeños espacios, bares y centros culturales se convierten en plataformas donde nacen comunidades alrededor de la música.
+
+Estos conciertos también revelan una problemática constante: muchas presentaciones quedan únicamente registradas en historias de Instagram o publicaciones pasajeras. Sin un archivo permanente, momentos importantes de la escena desaparecen con el tiempo.
+</p>
+
+
+`,
+
+
+imagenes:[
+
+"assets/img/m1.jpg",
+
+"assets/img/m4.jpg",
+
+"assets/img/m3.jpg"
+
+]
+
 
 },
 
+
+
 3:{
 
-    imagen:"assets/img/articulo3.jpg",
 
-    titulo:"Arte visual contemporáneo",
+imagen:"assets/img/r1.jpg",
 
-    subtitulo:"La imagen como registro de memoria cultural.",
 
-    texto:`
-    <p>
-    Las artes visuales funcionan como documentos
-    que reflejan pensamientos, conflictos
-    y transformaciones sociales.
-    </p>
+titulo:"EL PRIMER REBELDE DE AMÉRICA X NÁUSEAS",
 
-    <p>
-    Cada fotografía, ilustración o intervención
-    artística conserva una parte de la época
-    en la que fue creada.
-    </p>
 
-    <p>
-    Archivo E-SEIS entiende la imagen como
-    una forma de preservar aquello que podría
-    desaparecer.
-    </p>
-    `,
+subtitulo:"Una experiencia sonora entre memoria",
 
-    imagenesInterior:[
-        "assets/img/m1.jpg",
-        "assets/img/m2.jpg",
-        "assets/img/m3.jpg",
-        "assets/img/m4.jpg"
-    ]
+
+texto:`
+
+<h2>Identidad y caos creativo</h2>
+
+
+<p>
+En la escena independiente ecuatoriana existen proyectos que buscan romper estructuras y explorar nuevos caminos. La presentación de El Primer Rebelde de América junto a Náuseas fue un encuentro donde la música se convirtió en una experiencia cargada de energía, experimentación y libertad artística.
+
+Ambos proyectos representan una generación que entiende el arte como un espacio de exploración. Más allá de crear canciones, sus propuestas construyen atmósferas donde el sonido, la imagen y la actitud forman parte de un mismo lenguaje.
+
+El Primer Rebelde de América plantea una identidad marcada por la irreverencia y la búsqueda de nuevas formas de expresión. Su nombre funciona como una declaración de principios: cuestionar lo establecido y utilizar la música como herramienta de ruptura frente a las convenciones.
+
+Por su parte, Náuseas desarrolla una propuesta intensa y visceral, donde los sonidos transmiten emociones difíciles de definir. Su música refleja una realidad urbana llena de contradicciones, ansiedad y experiencias personales transformadas en creación artística.
+
+El encuentro entre ambas bandas muestra una característica esencial de la escena quiteña: la colaboración entre proyectos que comparten una misma necesidad de experimentar. En estos espacios no existen únicamente espectadores y artistas; existe una comunidad que construye identidad alrededor de la música.
+
+Estos eventos representan momentos únicos que pocas veces quedan documentados de manera permanente. Las fotografías, grabaciones y testimonios permiten conservar una memoria que normalmente queda limitada a archivos personales.
+
+Archivo E-SEIS busca recuperar estos fragmentos de la cultura contemporánea para demostrar que la escena independiente también forma parte de la historia artística de Quito.
+</p>
+
+
+`,
+
+
+imagenes:[
+
+"assets/img/r1.jpg",
+
+"assets/img/r2.jpg",
+
+"assets/img/r3.jpg"
+
+]
+
 
 }
 
+
 };
 
-
-
-
-
-
-
-
-
 function abrirArticulo(numero){
-
 
 
 const articulo = contenidoArticulos[numero];
 
 
-
-if(!articulo){
-
-return;
-
-}
+if(!articulo)return;
 
 
 
-
-
-document.getElementById(
-"imagenArticulo"
-).src = articulo.imagen;
+document.getElementById("imagenArticulo").src =
+articulo.imagen;
 
 
 
+document.getElementById("tituloArticulo").innerHTML =
+articulo.titulo;
 
 
-document.getElementById(
-"tituloArticulo"
-).innerHTML = articulo.titulo;
+
+document.getElementById("textoArticulo").innerHTML =
+articulo.texto;
 
 
 
 
-
-document.getElementById(
-"subtituloArticulo"
-).innerHTML = articulo.subtitulo;
+const galeria =
+document.getElementById("galeriaArticulo");
 
 
 
-
-
-document.getElementById(
-"textoArticulo"
-).innerHTML = articulo.texto;
+galeria.innerHTML="";
 
 
 
+articulo.imagenes.forEach(img=>{
 
 
-document.getElementById(
-"imagenInterior"
-).src = articulo.imagenInterior;
+galeria.innerHTML +=
+
+`
+<img src="${img}">
+`;
 
 
+
+});
 
 
 
 abrirModal("modalArticulo");
 
 
-
 }
-
-
-
-
 
 
 
@@ -1012,5 +1043,20 @@ function irEdicionFisica(){
 
     // abrir sección edición física
     mostrarSeccion("fisica");
+
+}
+// ==========================================
+// MENU HAMBURGUESA
+// ==========================================
+
+
+function abrirMenu(){
+
+
+const menu=document.getElementById("menu");
+
+
+menu.classList.toggle("activo");
+
 
 }
