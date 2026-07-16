@@ -671,3 +671,333 @@ document.body.classList.add("cargado");
 }
 
 );
+/*=====================================================
+MODALES
+======================================================*/
+
+function abrirFormularioGratis(){
+
+document.getElementById("modalGratis").style.display="flex";
+
+}
+
+function abrirMetodosPago(){
+
+document.getElementById("modalPago").style.display="flex";
+
+}
+
+function abrirTransferencia(){
+
+cerrarModal("modalPago");
+
+document.getElementById("modalTransferencia").style.display="flex";
+
+}
+
+function abrirTarjeta(){
+
+cerrarModal("modalPago");
+
+document.getElementById("modalTarjeta").style.display="flex";
+
+}
+
+function cerrarModal(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
+
+
+
+/*=====================================================
+CERRAR MODAL AL HACER CLICK FUERA
+======================================================*/
+
+window.onclick=function(e){
+
+const modales=document.querySelectorAll(".modal");
+
+modales.forEach(function(modal){
+
+if(e.target===modal){
+
+modal.style.display="none";
+
+}
+
+});
+
+}
+
+
+
+
+/*=====================================================
+FORMULARIO GRATUITO
+======================================================*/
+
+const formGratis=document.getElementById("formGratis");
+
+if(formGratis){
+
+formGratis.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+cerrarModal("modalGratis");
+
+document.getElementById("modalExito").style.display="flex";
+
+formGratis.reset();
+
+});
+
+}
+
+
+
+
+/*=====================================================
+PAGO CON TARJETA
+======================================================*/
+
+const formTarjeta=document.getElementById("formTarjeta");
+
+if(formTarjeta){
+
+formTarjeta.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+cerrarModal("modalTarjeta");
+
+mostrarPagoExitoso();
+
+formTarjeta.reset();
+
+});
+
+}
+
+
+
+
+/*=====================================================
+MODAL PAGO EXITOSO
+======================================================*/
+
+function mostrarPagoExitoso(){
+
+let modal=document.createElement("div");
+
+modal.className="modal";
+
+modal.style.display="flex";
+
+modal.innerHTML=`
+
+<div class="ventana exito">
+
+<h1>✓</h1>
+
+<h2>Pago realizado correctamente</h2>
+
+<p>
+
+Gracias por apoyar Archivo E-SEIS.
+
+En unos minutos recibirás un correo con:
+
+<br><br>
+
+• La contraseña de acceso.
+
+<br>
+
+• El enlace para leer la revista completa.
+
+</p>
+
+<button onclick="cerrarPago()">
+
+Aceptar
+
+</button>
+
+</div>
+
+`;
+
+document.body.appendChild(modal);
+
+}
+
+
+
+
+function cerrarPago(){
+
+const modal=document.querySelector(".modal:last-child");
+
+if(modal){
+
+modal.remove();
+
+}
+
+}
+
+
+
+
+/*=====================================================
+BOTÓN WHATSAPP
+======================================================*/
+
+function abrirWhatsapp(){
+
+const telefono="593999999999"; // CAMBIAR
+
+const mensaje=
+
+`Hola.
+
+Acabo de realizar la transferencia para adquirir una edición de Archivo E-SEIS.
+
+Adjunto el comprobante de pago.`;
+
+window.open(
+
+`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+
+"_blank"
+
+);
+
+}
+
+
+
+
+/*=====================================================
+VALIDACIÓN TARJETA
+======================================================*/
+
+const numero=document.querySelector('input[placeholder="Número de tarjeta"]');
+
+if(numero){
+
+numero.addEventListener("input",function(){
+
+this.value=this.value
+
+.replace(/\D/g,'')
+
+.replace(/(.{4})/g,'$1 ')
+
+.trim();
+
+});
+
+}
+
+
+
+
+const cvv=document.querySelector('input[placeholder="CVV"]');
+
+if(cvv){
+
+cvv.addEventListener("input",function(){
+
+this.value=this.value.replace(/\D/g,'');
+
+});
+
+}
+
+
+
+
+const fecha=document.querySelector('input[placeholder="MM/AA"]');
+
+if(fecha){
+
+fecha.addEventListener("input",function(){
+
+this.value=this.value
+
+.replace(/\D/g,'')
+
+.replace(/(\d{2})(\d)/,"$1/$2")
+
+.substring(0,5);
+
+});
+
+}
+
+
+
+
+/*=====================================================
+EFECTO BOTONES PLANES
+======================================================*/
+
+const botones=document.querySelectorAll(".plan button");
+
+botones.forEach(function(btn){
+
+btn.addEventListener("mouseenter",function(){
+
+btn.style.transform="scale(1.03)";
+
+});
+
+btn.addEventListener("mouseleave",function(){
+
+btn.style.transform="scale(1)";
+
+});
+
+});
+
+
+
+
+/*=====================================================
+ANIMACIÓN DE ENTRADA DE PLANES
+======================================================*/
+
+const planes=document.querySelectorAll(".plan");
+
+const observer=new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+planes.forEach(function(plan){
+
+plan.style.opacity="0";
+
+plan.style.transform="translateY(60px)";
+
+plan.style.transition=".8s";
+
+observer.observe(plan);
+
+});
